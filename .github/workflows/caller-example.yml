@@ -1,0 +1,25 @@
+# Copy/adapt this file into a consuming repository as .github/workflows/ci.yml.
+# Replace @main with a reviewed, immutable version tag (for example @v1) once one is published.
+
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+concurrency:
+  group: ci-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    uses: flofy/reuse-workflows/.github/workflows/node-ci.yml@main
+    with:
+      node-version: "22"
+      package-manager: npm
+      lint-command: npm run lint
+      test-command: npm test
+      build-command: npm run build
+      # typecheck-command: npm run typecheck
