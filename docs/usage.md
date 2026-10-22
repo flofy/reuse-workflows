@@ -6,7 +6,7 @@ Copy `.github/workflows/caller-example.yml` into the consuming repository as `.g
 
 The reusable workflow supports:
 
-- Node.js version selection.
+- Node.js version selection, defaulting to Node.js 24.
 - npm or pnpm dependency installation.
 - Optional lint, typecheck, test, and build commands.
 - A 15-minute job timeout.
