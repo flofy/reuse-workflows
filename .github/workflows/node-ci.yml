@@ -7,7 +7,7 @@ on:
         description: Node.js version
         type: string
         required: false
-        default: "22"
+        default: "24"
       package-manager:
         description: Package manager used by the project
         type: string
