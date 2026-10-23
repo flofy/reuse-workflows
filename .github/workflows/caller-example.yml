@@ -17,7 +17,7 @@ jobs:
   checks:
     uses: flofy/reuse-workflows/.github/workflows/node-ci.yml@main
     with:
-      node-version: "22"
+      node-version: "24"
       package-manager: npm
       lint-command: npm run lint
       test-command: npm test
